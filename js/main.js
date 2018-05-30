@@ -71,11 +71,13 @@ var checkForMatch = function () {
 
 
 function reset() {
+var loopLength = cardsInPlay.length;
 
-	for (var i = 0; i < cardsInPlay.length; i++) {
+	for (var i = 0; i < loopLength; i++) {
+		console.log(cardsInPlay.length);
+		console.log(i, cardsInPlay);
 		cardsInPlay.shift();
 	}
-
 
 	for (var i = 0; i < 4; i++) {
 		var card = document.getElementById(i);
