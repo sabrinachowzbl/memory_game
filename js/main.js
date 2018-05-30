@@ -29,15 +29,16 @@ var cardsInPlay = [];
 var a = 0;
 var flipCard = function () {
 
-	if (a<2) {
+
 	var ID = this.getAttribute('data-id');
 	console.log('user flipped ' + cards[ID].rank);
 	this.removeAttribute("src", "images/back.png");
 	this.setAttribute("src", cards[ID].cardImage);
 	cardsInPlay.push(cards[ID].rank);
 	a ++;
-	} else {
-		checkForMatch();
+
+	if (a == 2) {
+		setTimeout(checkForMatch, 250);
 	}
 
 }
