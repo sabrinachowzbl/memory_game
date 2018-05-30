@@ -108,3 +108,11 @@ img {
 	height: 0;
 	font-size: 0;
 }
+
+.announcement {
+	color: green;
+}
+
+#game-board {
+	padding: 0px 0px 40px 0px;
+}

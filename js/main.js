@@ -1,4 +1,5 @@
 console.log("Up and running!");
+document.getElementById('button').addEventListener('click', reset);
 
 var cards = [
 {
@@ -50,6 +51,7 @@ var createBoard = function () {
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
 		cardElement.setAttribute('data-id', i);
+		cardElement.setAttribute('id', i);
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);
 
@@ -66,5 +68,21 @@ var checkForMatch = function () {
 	}
 }
 
+
+
+function reset() {
+
+	for (var i = 0; i < cardsInPlay.length; i++) {
+		cardsInPlay.shift();
+	}
+
+
+	for (var i = 0; i < 4; i++) {
+		var card = document.getElementById(i);
+		card.setAttribute("src", 'images/back.png');
+	}
+
+	a = 0;	
+}
 
 createBoard();
